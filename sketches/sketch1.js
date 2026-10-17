@@ -11,9 +11,7 @@ let subDPSRev = 0;
 let supportRev = 0;
 let DPSRev = 0;
 
-function preload() {
-  HSRData = loadJSON(MEDIA_FOLDER + '/hsr.json');
-} 
+
 
 let myFont;
 let backgroundImage;
@@ -32,7 +30,7 @@ let positionPieRadius = 82;
 
 async function setup() {
   createCanvas(800, 800);
-
+  HSRData = await loadJSON(MEDIA_FOLDER + '/hsr.json');
   myFont = await loadFont(MEDIA_FOLDER + '/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf');
   backgroundImage = await loadImage(MEDIA_FOLDER + '/HSRDATABackground.png');
 
@@ -78,6 +76,7 @@ function draw() {
   noStroke();
   textSize(30);
   textFont(myFont);
+  textWeight(900);
   text("Honkai Star Rail Character Revenue Chart", 80, 40); 
   textSize(20);
   text("Revenue By Character", 285, 610);
